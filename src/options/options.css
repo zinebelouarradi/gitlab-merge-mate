@@ -1,0 +1,29 @@
+body {
+    font-family: system-ui;
+    background-color: #1f1e24;
+    margin: 0;
+    width: 600px;
+    color: white;
+    min-height: 20vh;
+}
+
+.container {
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sign-out{
+    border-width: 0;
+    background-color: #428fdc;
+    box-shadow: inset 0 0 0 1px #63a6e9;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    padding: 0.5rem 0.75rem;
+    line-height: 1rem;
+    color: white;
+    cursor: pointer;
+}
+

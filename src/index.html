@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Pipeline Status</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container" id="container">
+      <div id="loader" class="loading">
+        <img
+          alt="loading_img"
+          class="loading_gitlab"
+          src="../loading.gif"
+          style="display: block"
+        />
+      </div>
+      <div id="token-input" style="display: none" class="input-container">
+        <input
+          type="text"
+          id="gitlab-token"
+          class="gitlab-token-input"
+          placeholder="Enter your GitLab token"
+        />
+        <button type="button" id="fetch-data-button" class="button">
+          Login
+        </button>
+      </div>
+      <div id="projects-section" class="projects-section">
+        <div
+          class="input-container"
+          id="project-search-input"
+          style="display: none"
+        >
+          <input
+            id="search-input"
+            class="gitlab-token-input"
+            placeholder="Find Project"
+            type="text"
+          />
+        </div>
+        <div
+          id="project-table"
+          class="project-table"
+          style="display: none"
+        ></div>
+      </div>
+      <div id="pinned-projects-section" class="pinned-projects-section" style="display: none">
+        <div id="selected-projects" class="selected-projects">
+          <div class="selected-project-button" id="pinned-owned-mrs" style="border-color: #428fdc">
+            <label for="owned-mrs">Owned</label>
+            <input type="radio" id="owned-mrs" name="radio"  />
+          </div>
+        </div>
+        <button class="clear-pinned-projects" id="clear-pinned-projects">
+          <img src="../icons/trash.svg" alt="clear" />
+        </button>
+      </div>
+
+      <div id="merge-table" style="display: none">
+        <table class="merge-table">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Branch</th>
+              <th>Author</th>
+              <th>Approvals</th>
+              <th>Threads Resolved</th>
+              <th>Conflicts</th>
+            </tr>
+          </thead>
+          <tbody id="merge-table-body"></tbody>
+        </table>
+      </div>
+    </div>
+    <div id="end-of-page"></div>
+    <script src="script.js" type="module"></script>
+  </body>
+</html>

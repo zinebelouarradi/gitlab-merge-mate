@@ -1,0 +1,23 @@
+{
+  "name": "Gitlab",
+  "version": "1.0.0",
+  "description": "Gitlab",
+  "manifest_version": 3,
+  "author": "Zineb Elouarradi",
+  "action":{
+    "default_popup": "src/index.html",
+    "default_title": "Gitlab"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "options_ui": {
+    "page": "src/options/options.html"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
