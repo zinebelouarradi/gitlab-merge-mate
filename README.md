@@ -1,7 +1,7 @@
 # gitlab-merge-mate
 
 
-A chrome extension to simplify access to GitLab merge requests and projects.
+Vanilla JS chrome extension to simplify access to GitLab merge requests and projects. :)
 
 Preview:
 
