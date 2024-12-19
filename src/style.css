@@ -2,7 +2,7 @@ body {
   font-family: system-ui;
   background-color: #1f1e24;
   margin: 0;
-  width: 600px;
+  width: 800px;
   color: white;
 }
 
@@ -38,6 +38,7 @@ th {
 .merge-table td {
   padding: 10px;
   text-align: left;
+  max-width: 180px;
 }
 td a {
   color: #428fdc !important;
@@ -110,9 +111,7 @@ td a {
 }
 
 .gitlab-token-input:focus {
-  /* Reset or override styles for focused state */
-  outline: none; /* Remove the default focus outline */
-  /* Add any other styles as needed */
+  outline: none;
 }
 
 .project-table a{
@@ -245,3 +244,35 @@ td a {
   margin: 20px 0;
   display: block;
 }
+
+.approved-img{
+  width: 20px;
+}
+
+.author-avatar{
+  border-radius: 50%;
+  width: 25px;
+}
+
+.hint{
+  font-size: 0.8rem;
+  color: #b2b2c7;
+  padding: 10px 4px;
+}
+
+a{
+  color: #428fdc; ;
+}
+
+.error-box {
+  color: #d30d36;
+  font-size: 0.9rem;
+  padding: 10px 4px;
+  display: none;
+}
+
+.login-elements{
+  display: none;
+  flex-direction: column;
+}
+
