@@ -1,6 +1,8 @@
 import { gitlabApiURL } from "../variables.js";
-import { handlePinnedProjects, selectProject } from "./pinnedProjects.js";
+import { handlePinnedProjects } from "./pinnedProjects.js";
+import selectProject from "./selectProject.js"
 import { fetchMergeRequests } from "./fetchMergeRequests.js";
+
 export async function fetchProjects() {
   const { token } = await chrome.storage.local.get(["token"]);
   const query = document.getElementById("search-input").value;
@@ -81,7 +83,7 @@ function handleButtonClick(projectId) {
     const { projects } = result;
     if (projects) {
       if (!Object.keys(projects).includes(projectId)) {
-        const projectName = prompt("Enter a name for the project:");
+        const projectName = prompt("Enter a display name for the project:");
         if (!projectName) {
           return;
         }

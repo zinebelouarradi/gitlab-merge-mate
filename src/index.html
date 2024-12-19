@@ -22,7 +22,8 @@
           style="display: block"
         />
       </div>
-      <div id="token-input" style="display: none" class="input-container">
+      <div  id="login-elements"  class="login-elements">
+        <div id="token-input" class="input-container">
         <input
           type="text"
           id="gitlab-token"
@@ -32,6 +33,9 @@
         <button type="button" id="fetch-data-button" class="button">
           Login
         </button>
+        </div>
+        <div id="error-box" class="error-box"></div>
+        <span class="hint"> you can generate a new token <a href="https://gitlab.com/-/user_settings/personal_access_tokens" target="_blank">here</a></span>
       </div>
       <div id="projects-section" class="projects-section">
         <div
@@ -55,7 +59,7 @@
       <div id="pinned-projects-section" class="pinned-projects-section" style="display: none">
         <div id="selected-projects" class="selected-projects">
           <div class="selected-project-button" id="pinned-owned-mrs" style="border-color: #428fdc">
-            <label for="owned-mrs">Owned</label>
+            <label for="owned-mrs">my open mrs</label>
             <input type="radio" id="owned-mrs" name="radio"  />
           </div>
         </div>
@@ -71,9 +75,9 @@
               <th>Title</th>
               <th>Branch</th>
               <th>Author</th>
-              <th>Approvals</th>
-              <th>Threads Resolved</th>
+              <th>Threads</th>
               <th>Conflicts</th>
+              <th>Approved</th>
             </tr>
           </thead>
           <tbody id="merge-table-body"></tbody>
