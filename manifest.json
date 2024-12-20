@@ -1,18 +1,22 @@
 {
-  "name": "Gitlab",
-  "version": "1.0.0",
-  "description": "Gitlab",
+  "name": "Gitlab MR shortcuts",
+  "version": "1.0.1",
+  "description": "Chrome extension to easily access gitlab projects and merge requests.",
   "manifest_version": 3,
   "author": "Zineb Elouarradi",
   "action":{
     "default_popup": "src/index.html",
-    "default_title": "Gitlab"
+    "default_title": "Gitlab MR shortcuts"
   },
   "permissions": [
     "storage"
   ],
+  "host_permissions": [
+    "https://gitlab.com/*"
+  ],
   "options_ui": {
-    "page": "src/options/options.html"
+    "page": "src/options/options.html",
+    "open_in_tab": true
   },
   "icons": {
     "16": "icons/icon16.png",

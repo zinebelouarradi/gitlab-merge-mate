@@ -9,12 +9,11 @@ async function initializeApp() {
 
     if (token) {
       await fetchMergeRequests();
-
       if (projects) {
         handlePinnedProjects(projects);
       }
     } else {
-      displayTokenInput();
+      displayLogin();
     }
   } catch (error) {
     console.error("Error initializing the app:", error);
@@ -22,15 +21,15 @@ async function initializeApp() {
 }
 
 // Displays the token input UI
-function displayTokenInput() {
-  const loginElemets = document.getElementById("login-elements");
-  if (loginElemets) {
-    loginElemets.style.display = 'flex';
+function displayLogin() {
+  const loginElements = document.getElementById("login-elements");
+  if (loginElements) {
+    loginElements.style.display = 'flex';
   }
 }
 
 // Clears the projects section UI and resets the search input
-function clearProjectsUI() {
+function resetProjectsUI() {
   const projectsDiv = document.getElementById("project-table");
   const searchInput = document.getElementById("search-input");
 
@@ -67,12 +66,12 @@ function setupEventListeners() {
   document.getElementById("fetch-data-button")?.addEventListener("click", fetchMergeRequests);
   document.getElementById("search-input")?.addEventListener("keydown", handleSearchInputKeyDown);
   document.getElementById("owned-mrs")?.addEventListener("click", handlePinContainerClick);
-  document.getElementById("selected-projects")?.addEventListener("click", clearProjectsUI);
+  document.getElementById("selected-projects")?.addEventListener("click", resetProjectsUI);
   document.getElementById("clear-pinned-projects")?.addEventListener("click", clearPinnedProjects);
 }
 
 // Entry point: Sets up event listeners and initializes the app
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
   setupEventListeners();
-  initializeApp();
+  await initializeApp();
 });

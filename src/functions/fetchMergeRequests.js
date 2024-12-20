@@ -33,10 +33,10 @@ export async function fetchMergeRequests(projectId) {
       const errorArea = document.getElementById("error-box");
       errorArea.innerText = "Invalid Token"
       errorArea.style.display = "block";
-      throw new Error(`Failed to fetch data: ${response.status} ${response.statusText}`);
     }
 
     const data = await response.json();
+    console.log(data)
     await populateMergeRequestsTable(data);
 
     updateUIComponents(gitlabToken);
@@ -74,7 +74,7 @@ async function populateMergeRequestsTable(requests) {
 }
 
 function appendMergeRequestRow(tableBody, request) {
-  const isMergeable = request.detailed_merge_status === 'mergeable';
+  const isMergeable = request.detailed_merge_status === "mergeable";
   const statusIcon = isMergeable ? "../icons/check.svg" : "../icons/uncheck.svg";
 
   const row = tableBody.insertRow();
@@ -86,15 +86,17 @@ function appendMergeRequestRow(tableBody, request) {
         <img class="copy-img" src="../../icons/copy.svg" title="copy"/>
       </button>
     </td>
-    <td><img class="author-avatar" src="${request.author.avatar_url}" title="${request.author.name}"/></td>
-    <td>${request.blocking_discussions_resolved}</td>
+    <td><a href="${request.author.web_url}" target="_blank"><img class="author-avatar" src="${request.author.avatar_url}" title="${request.author.name}"/></a></td>
+    <td>${!request.blocking_discussions_resolved}</td>
     <td>${request.has_conflicts}</td>
     <td><img class="approved-img" src="${statusIcon}"/></td>
   `;
+
+  if(row.innerHTML){
+    document.getElementById(request.source_branch).addEventListener('click', handleCopyClick);
+  }
 }
 
-
-document.addEventListener('click', handleCopyClick);
 
 function handleCopyClick(event) {
   const button = event.target.closest("button");

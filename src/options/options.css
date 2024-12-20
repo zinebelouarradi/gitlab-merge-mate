@@ -1,7 +1,7 @@
 body {
     font-family: system-ui;
     background-color: #1f1e24;
-    margin: 0;
+    margin: auto;
     width: 600px;
     color: white;
     min-height: 20vh;
