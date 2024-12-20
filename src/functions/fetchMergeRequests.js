@@ -36,7 +36,6 @@ export async function fetchMergeRequests(projectId) {
     }
 
     const data = await response.json();
-    console.log(data)
     await populateMergeRequestsTable(data);
 
     updateUIComponents(gitlabToken);
@@ -81,7 +80,7 @@ function appendMergeRequestRow(tableBody, request) {
   row.innerHTML = `
     <td><a href="${request.web_url}" target="_blank" class="request-link">${request.title}</a></td>
     <td class="branch-cell">
-      ${request.source_branch}
+    <span>${request.source_branch}</span>
       <button id="${request.source_branch}" value="${request.source_branch}" class="copy-button">
         <img class="copy-img" src="../../icons/copy.svg" title="copy"/>
       </button>

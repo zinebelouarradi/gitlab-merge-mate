@@ -22,12 +22,15 @@ body {
   border: 1px solid #434248;
   border-radius: 4px;
 }
-
-.branch-cell {
+.branch-cell{
+  display: flex;
+  justify-content: space-between;
+  gap: 3px;
+  width: 8rem;
+}
+.branch-cell span {
   word-break: break-all;
   color: #428fdc !important;
-  width: 8rem;
-  display: flex;
 }
 
 th {
@@ -63,7 +66,7 @@ td a {
   margin: 0 10px;
 }
 
-.project-table div {
+.project-element {
   border-bottom: 1px solid #333238;
   font-size: 0.8rem;
   color: #ececef;
@@ -75,19 +78,27 @@ td a {
   border-radius: 4px;
 }
 
-.project-table div:hover {
+.project-element:hover {
   background-color: #353438;
 }
 
 .outlined-selected-project{
   background-color: #353438;
   border-left: 2px solid #428fdc;
+  display: flex;
+  justify-content: space-between;
 
 }
 
 .outlined-unselected-project{
   background-color: transparent;
   border-left: 0;
+}
+
+.fetch-project-button{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }
 
 .input-container {
@@ -114,7 +125,7 @@ td a {
   outline: none;
 }
 
-.project-table a{
+.project-element a{
   font-size: 11px;
   margin-left: 8px;
 }
@@ -134,7 +145,7 @@ td a {
 .button:hover {
   border: 1px solid white;
 }
-.pin-image, .copy-img {
+.pin-image, .copy-img, .external-link-image{
   width: 20px;
   height: 20px;
   cursor: pointer;
@@ -190,10 +201,6 @@ td a {
   display: none;
 }
 
-.fetch-project-button {
-  cursor: pointer;
-}
-
 .selected-project-button {
   padding: 10px;
   cursor: pointer;
@@ -239,7 +246,7 @@ td a {
   border-color: #428fdc;
 }
 
-.project-table span{
+.project-element span{
   text-align: center;
   margin: 20px 0;
   display: block;
@@ -260,7 +267,7 @@ td a {
   padding: 10px 4px;
 }
 
-a{
+.hint-link{
   color: #428fdc; ;
 }
 
