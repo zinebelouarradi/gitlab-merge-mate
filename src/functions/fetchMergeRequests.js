@@ -8,7 +8,6 @@ function getProjectMergeRequestUrl(projectId) {
   return `${gitlabApiURL}projects/${projectId}/merge_requests?state=opened`;
 }
 
-
 async function fetchGitlabToken() {
   const errorArea = document.getElementById("error-box");
   errorArea.style.display = "none";
@@ -33,6 +32,7 @@ export async function fetchMergeRequests(projectId) {
       const errorArea = document.getElementById("error-box");
       errorArea.innerText = "Invalid Token"
       errorArea.style.display = "block";
+      return
     }
 
     const data = await response.json();
