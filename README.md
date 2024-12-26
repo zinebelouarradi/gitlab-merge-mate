@@ -13,8 +13,8 @@
 </ul>
 
 <h2>Preview</h2>
-<img src="./Screenshot%202023-12-08%20at%2016.20.19.png" alt="GitLab Merge Mate Preview 1">
-<img src="./Screenshot%202023-12-08%20at%2016.20.42.png" alt="GitLab Merge Mate Preview 2">
+<img src="./Screenshot 2024-12-24 at 12.38.29.png" alt="GitLab Merge Mate Preview 1">
+<img src="./Screenshot 2024-12-24 at 12.38.06.png" alt="GitLab Merge Mate Preview 2">
 
 <h2>Installation</h2>
 <p>Install the extension directly from the Chrome Web Store:</p>
